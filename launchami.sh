@@ -1,14 +1,13 @@
 #!/bin/bash
 
-java -jar ./oktaAWSCLI.jar
-
 ####### USER SPECIFIC CONFIGS #######
 REGION="us-east-1"                  #
-AMI_ID=""               #
+AMI_ID=""                           #
 INSTANCE_TYPE="m5.xlarge"           #
 LOCALPATHTOKEYS="~/keys"            #
-SECURITY_GROUP=""        #
-SUBNET_ID=""         #
+KEYPAIR="my-keys"                   #
+SECURITY_GROUP=""                   #
+SUBNET_ID=""                        #
 USER_DATA_FILE="userdata.txt"       #
 #####################################
 
@@ -16,8 +15,6 @@ echo "What's your name?"
 read USERNAME
 echo "What do you want to name the instance?"
 read INSTANCE_NAME
-echo "What is the name of your key-pair? (Do not include the extension)"
-read KEYPAIR
 
 LAUNCH=$(aws ec2 run-instances --region $REGION \
 --image-id $AMI_ID \
