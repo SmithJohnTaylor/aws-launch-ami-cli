@@ -24,7 +24,7 @@ LAUNCH=$(aws ec2 run-instances --region $REGION \
 --key-name $KEYPAIR \
 --security-group-ids $SECURITY_GROUP \
 --subnet-id $SUBNET_ID \
---tag-specifications 'ResourceType=instance,Tags=[{Key="Name",Value='"$INSTANCE_NAME"'},{Key="SE Name",Value='"$USERNAME"'}]')
+--tag-specifications 'ResourceType=instance,Tags=[{Key="Name",Value='"$INSTANCE_NAME"'},{Key="Username",Value='"$USERNAME"'}]')
 
 echo
 echo Instance launched.
